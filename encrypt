@@ -1,0 +1,95 @@
+private void button1_Click(object sender, EventArgs e)
+        {
+            Random ran = new Random();
+            Decimal count1 = 0;
+            Decimal count2 = 0;
+            Decimal count3 = 0;
+            Decimal count4 = 0;
+            Decimal count5 = 0;
+            for (int i = 0; i < 50; i++)
+            {
+                int num = ran.Next(0, 50);
+                float num1 = num;
+                float num2 = num1 / 100; 
+                richTextBox1.Text = num2.ToString() + " , " + richTextBox1.Text;
+                if(num2 >=.00 && num2 <= .10)
+                {
+                    count1 = count1 + 1;
+                }
+                else if (num2 >= .10 && num2 <= .20)
+                {
+                    count2 = count2 + 1;
+                }
+                else if (num2 >= .20 && num2 <= .30)
+                {
+                    count3 = count3 + 1;
+                }
+                else if (num2 >=.30 && num2 <= .40)
+                {
+                    count4 = count4 + 1;
+                }
+                else if (num2 >= .40 && num2 <= .50)
+                {
+                    count5 = count5 + 1;
+                }
+                textBox1.Text = count1.ToString();
+                textBox2.Text = count2.ToString();
+                textBox3.Text = count3.ToString();
+                textBox4.Text = count4.ToString();
+                textBox5.Text = count5.ToString();
+                Decimal exp1 = Convert.ToDecimal(textBox6.Text);
+                Decimal exp2 = Convert.ToDecimal(textBox7.Text);
+                Decimal exp3 = Convert.ToDecimal(textBox8.Text);
+                Decimal exp4 = Convert.ToDecimal(textBox9.Text);
+                Decimal exp5 = Convert.ToDecimal(textBox10.Text);
+                Decimal def1 = count1 - exp1;
+                Decimal def2 = count2 - exp2;
+                Decimal def3 = count3 - exp3;
+                Decimal def4 = count4 - exp4;
+                Decimal def5 = count5 - exp5;
+                textBox11.Text = def1.ToString();
+                textBox12.Text = def2.ToString();
+                textBox13.Text = def3.ToString();
+                textBox14.Text = def4.ToString();
+                textBox15.Text = def5.ToString();
+                Decimal sq1 = def1 * def1;
+                Decimal sq2 = def2 * def2;
+                Decimal sq3 = def3 * def3;
+                Decimal sq4 = def4 * def4;
+                Decimal sq5 = def5 * def5;
+                textBox16.Text = sq1.ToString();
+                textBox17.Text = sq2.ToString();
+                textBox18.Text = sq3.ToString();
+                textBox19.Text = sq4.ToString();
+                textBox20.Text = sq5.ToString();
+                Decimal div1 = sq1 / exp1;
+                Decimal div2 = sq2 / exp2;
+                Decimal div3 = sq3 / exp3;
+                Decimal div4 = sq4 / exp4;
+                Decimal div5 = sq5 / exp5;
+                textBox21.Text = div1.ToString();
+                textBox22.Text = div2.ToString();
+                textBox23.Text = div3.ToString();
+                textBox24.Text = div4.ToString();
+                textBox25.Text = div5.ToString();
+                Decimal sum = div1 + div2 + div3 + div4 + div5;
+                textBox26.Text = sum.ToString();
+                if(sum <= Convert.ToDecimal(textBox27.Text) || sum <= Convert.ToDecimal(textBox28.Text) || sum <= Convert.ToDecimal(textBox29.Text))
+                {
+                    label13.Visible = true;
+                    label18.Visible = false;
+                }
+                else
+                {
+                    label18.Visible = true;
+                    label13.Visible = false;
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f = new Form1();
+            f.Show();
+        }
